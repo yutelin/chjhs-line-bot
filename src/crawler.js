@@ -12,6 +12,7 @@ String.prototype.replaceAll = function (find, replace) {
   return str.replace(new RegExp(find, 'g'), replace);
 };
 
+require('dotenv').config();
 var bot = linebot({
   channelId:  process.env.ChannelId,
   channelSecret:  process.env.ChannelSecret,

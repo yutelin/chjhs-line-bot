@@ -3,6 +3,7 @@ var express = require('express');
 var dbTool = require('./db');
 var classes = require('./classes');
 
+require('dotenv').config();
 var bot = linebot({
   channelId:  process.env.ChannelId,
   channelSecret:  process.env.ChannelSecret,

@@ -125,6 +125,7 @@ function crawlTheUrl(url, classId, className, bot){
     .catch((err) => console.log(err.message));
 }
 
+require('dotenv').config();
 var bot = linebot({
             channelId:  process.env.ChannelId,
             channelSecret:  process.env.ChannelSecret,
