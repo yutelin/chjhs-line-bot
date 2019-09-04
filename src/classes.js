@@ -93,5 +93,10 @@ module.exports = [
     url: 'http://www.chjhs.tp.edu.tw/dispPageBox/KIDFULL.aspx?ddsPageID=KIDECONTACT&&classid=ECKID3C',
     name:'長頸鹿班'
   },
+  {
+    id: 'ECKID1A',
+    url: 'http://www.chjhs.tp.edu.tw/dispPageBox/KIDFULL.aspx?ddsPageID=KIDECONTACT&&classid=ECKID1A',
+    name:'蝴蝶班'
+  },
 
 ];
