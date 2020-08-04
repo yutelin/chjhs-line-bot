@@ -1,4 +1,10 @@
 module.exports = [
+  // 一年級
+  // {
+  //   id: 'ECELE1A',
+  //   url: 'http://www.chjhs.tp.edu.tw/dispPageBox/ELEFULL.aspx?ddsPageID=ELEECONTACT&&classid=ECELE1A',
+  //   name:'一年忠班'
+  // },
   // 二年級
   {
     id: 'ECELE2A',
