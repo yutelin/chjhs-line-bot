@@ -1,5 +1,4 @@
 var firebase = require('firebase');
-
 require('dotenv').config();
 var config = {
   apiKey: process.env.FirebaseApiKey,
@@ -11,7 +10,6 @@ var config = {
 };
 const app = firebase.initializeApp(config);
 const db = firebase.database();
-
 module.exports = {
   endDb: function (){
     db.goOffline()

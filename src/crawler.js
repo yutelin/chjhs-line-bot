@@ -80,7 +80,7 @@ async function crawlTheUrl(theClass){
   var selector = getSelector(page);
 
   if (!checkHasContent(selector)){
-    console.log('no content');
+    console.log(classId + ': no content');
     return;
   }
   var content = getContent(selector, name);

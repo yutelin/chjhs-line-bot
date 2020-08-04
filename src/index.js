@@ -1,8 +1,8 @@
+
 var linebot = require('linebot');
 var express = require('express');
 var dbTool = require('./db');
 var classes = require('./classes');
-
 require('dotenv').config();
 var bot = linebot({
   channelId:  process.env.ChannelId,
@@ -21,15 +21,14 @@ const checkContentAndReply = (event, classId, className) => {
         event.reply(content.contentString);
       }
       else{
-        event.reply('已關注' + className);
+        event.reply(className);
       }
     });
 
 }
 
-
 bot.on('message', function(event) {
-    //console.log(event); //把收到訊息的 event 印出來看看
+    console.log(event); //Print received event
     var targetId = event.source.groupId? event.source.groupId : event.source.userId;
     if (event.message.type = 'text') {
         var msg = event.message.text;
@@ -67,31 +66,28 @@ bot.on('message', function(event) {
 });
 
 bot.on('follow', function(event) {
-    console.log(event);
-    event.reply(initialMessage);
+  console.log(event);
+  event.reply(initialMessage);
 });
 
 bot.on('unfollow', function(event) {
-    console.log(event);
-    dbTool.removeIdFromAllClass(event.source.userId);
+  console.log(event);
+  dbTool.removeIdFromAllClass(event.source.userId);
 });
 
 bot.on('join', function(event) {
-    console.log(event);
-    event.reply(initialMessage);
+  console.log(event);
+  event.reply(initialMessage);
 });
 
 bot.on('leave', function(event) {
-    console.log(event);
-    dbTool.removeIdFromAllClass(event.source.groupId);
-
+  console.log(event);
+  dbTool.removeIdFromAllClass(event.source.groupId);
 });
-
 
 const app = express();
 const linebotParser1 = bot.parser();
 app.post('/', linebotParser1);
-
 //因為 express 預設走 port 3000，而 heroku 上預設卻不是，要透過下列程式轉換
 var server = app.listen(process.env.PORT || 8080, function() {
   var port = server.address().port;
