@@ -5,6 +5,11 @@ module.exports = [
     url: 'http://www.chjhs.tp.edu.tw/dispPageBox/ELEFULL.aspx?ddsPageID=ELEECONTACT&&classid=ECELE1A',
     name:'一年忠班'
   },
+  {
+    id: 'ECELE1C',
+    url: 'http://www.chjhs.tp.edu.tw/dispPageBox/ELEFULL.aspx?ddsPageID=ELEECONTACT&&classid=ECELE1C',
+    name:'一年仁班'
+  },
   // 二年級
   {
     id: 'ECELE2A',
